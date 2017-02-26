@@ -70,3 +70,13 @@ void ofxMovableQuad::setActive(bool isActive)
 {
 	this->isActive = isActive;
 }
+
+ofVec2f ofxMovableQuad::getPosition()
+{
+	return ofVec2f(this->mesh.getVertex(0).x, this->mesh.getVertex(0).y);
+}
+
+ofVec2f ofxMovableQuad::getSize()
+{
+	return ofVec2f(abs(this->mesh.getVertex(3).x - this->mesh.getVertex(0).x), abs(this->mesh.getVertex(1).y - this->mesh.getVertex(0).y));
+}
